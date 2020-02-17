@@ -25,7 +25,7 @@ module uart_8n1_receiver #(
     // Clock, 16 pulses per 1 baud
     input clk_baud_16x,
     // Should be asserted to reset module on next clock cycle
-    input reset,
+    input reset
 );
     // RX synchronized to our clock
     reg rx_sync;
@@ -35,7 +35,7 @@ module uart_8n1_receiver #(
 
     // State counter, upper 4 bits are an index of current bit,
     // lower 4 bits are intermediate states within one bit
-    reg[7:0] state
+    reg[7:0] state;
 
     wire is_start_bit;
     assign is_start_bit = state[7:4] == 4'h0;
@@ -64,13 +64,13 @@ module uart_8n1_receiver #(
     wire framing_error;
     assign framing_error = (is_start_bit && is_sampled && sample == 1'b1)
                         || (is_stop_bit && is_sampled && sample == 1'b0);
+    
+    wire error;
+    assign error = sampling_error || framing_error;
+
     always @(posedge clk_baud_16x) begin
-        if (reset || (recv_read && !recv_busy)) begin
-            recv_error <= 1'b0;
-        end
-        else begin
-            recv_error <= sampling_error || framing_error;
-        end
+        recv_error <= reset || (recv_read && !recv_busy)
+                        ? 1'b0 : error;
     end
 
     wire cycle_finish;
@@ -79,47 +79,38 @@ module uart_8n1_receiver #(
         if (reset) begin
             recv_busy <= 1'b0;
         end
+        else if (recv_busy) begin
+            recv_busy <= !error && !cycle_finish;
+        end
         else begin
-            if (recv_busy) begin
-                recv_busy <= sampling_error || framing_error || cycle_finish ?
-                             1'b0 : recv_busy;
-            end
-            else begin
-                recv_busy <= recv_read ? 1'b1 : recv_busy;
-            end
+            recv_busy <= recv_read;
         end
     end
 
     reg[7:0] accumulator;
     always @(posedge clk_baud_16x) begin
-        if (is_data_bit && is_sampled) begin
-            accumulator <= {sample, accumulator[7:1]};
-        end
-        else begin
-            accumulator <= accumulator;
-        end
+        accumulator <= is_data_bit && is_sampled
+                    ? {sample, accumulator[7:1]} : accumulator;
     end
     
     always @(posedge clk_baud_16x) begin
         recv_data <= cycle_finish ? accumulator : recv_data;
     end
-    
-
-
-
 
     always @(posedge clk_baud_16x) begin
         if (reset) begin
             state <= 8'b0;
         end
-        else begin
-            if (recv_busy) begin
-                
+        else if (recv_busy) begin
+            if (state == 8'b0) begin
+                state <= rx_sync ? 8'b0 : 8'b1;
             end
             else begin
-
+                state <= error || cycle_finish ? 8'b0 : state + 1'b1;
             end
         end
+        else begin
+            state <= 8'b0;
+        end
     end
-
 endmodule
