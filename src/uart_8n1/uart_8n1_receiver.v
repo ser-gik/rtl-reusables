@@ -76,15 +76,9 @@ module uart_8n1_receiver #(
     wire cycle_finish;
     assign cycle_finish = is_stop_bit && state[3:0] == 4'he;
     always @(posedge clk_baud_16x) begin
-        if (reset) begin
-            recv_busy <= 1'b0;
-        end
-        else if (recv_busy) begin
-            recv_busy <= !error && !cycle_finish;
-        end
-        else begin
-            recv_busy <= recv_read;
-        end
+        recv_busy <= reset ? 1'b0
+                    : recv_busy ? (!error && !cycle_finish)
+                    : recv_read;
     end
 
     reg[7:0] accumulator;

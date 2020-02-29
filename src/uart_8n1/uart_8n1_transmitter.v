@@ -38,35 +38,21 @@ module uart_8n1_transmitter #(
     assign should_stop = state == 8'h9e;
 
     always @(posedge clk_baud_16x) begin
-        state <= reset || should_start ? 8'b0
-                                       : state + 1'b1;
+        state <= (reset || should_start) ? 8'b0
+                : state + 1'b1;
     end
 
     always @(posedge clk_baud_16x) begin
-        if (reset) begin
-            frame <= 9'b111111111;
-        end
-        else if (should_start) begin
-            frame <= {trans_data[7:0], 1'b0};
-        end
-        else if (should_send_next_bit) begin
-            frame <= {1'b1, frame[8:1]};
-        end
-        else begin
-            frame <= frame;
-        end
+        frame <= reset ? 9'b111111111
+                : should_start ? {trans_data[7:0], 1'b0}
+                : should_send_next_bit ? {1'b1, frame[8:1]}
+                : frame;
     end
 
     always @(posedge clk_baud_16x) begin
-        if (reset || should_stop) begin
-            trans_busy <= 1'b0;
-        end
-        else if (should_start) begin
-            trans_busy <= 1'b1;
-        end
-        else begin
-            trans_busy <= trans_busy;
-        end
+        trans_busy <= (reset || should_stop) ? 1'b0
+                    : should_start ? 1'b1
+                    : trans_busy;
     end
 endmodule
 
