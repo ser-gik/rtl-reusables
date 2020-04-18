@@ -1,9 +1,7 @@
 
 `timescale 1ns / 100ps
 
-module uart_8n1_receiver_tb #(
-    )(
-);
+module tb;
     localparam CLK_PERIOD = 4;
     reg clk;
     initial clk = 1'b0;
@@ -39,6 +37,7 @@ module uart_8n1_receiver_tb #(
         recv_read = 1'b1;
         repeat(40) @(posedge clk);
 
+        // recv OK
         rx_data = {1'b1, 8'h56, 1'b0};
         for (i = 0; i < 9; i = i + 1) begin
             repeat(16) @(posedge clk);
@@ -46,6 +45,7 @@ module uart_8n1_receiver_tb #(
         end
         repeat(40) @(posedge clk);
         
+        // recv OK
         rx_data = {1'b1, 8'h77, 1'b0};
         for (i = 0; i < 9; i = i + 1) begin
             repeat(16) @(posedge clk);
@@ -53,29 +53,64 @@ module uart_8n1_receiver_tb #(
         end
         repeat(40) @(posedge clk);
 
+        // recv FAIL
         rx_data = 10'b0;
         repeat(1) @(posedge clk);
         rx_data = 10'b1;
         repeat(40) @(posedge clk);
 
+        // recv FAIL
         rx_data = 10'b0;
         repeat(5) @(posedge clk);
         rx_data = 10'b1;
         repeat(40) @(posedge clk);
 
+        // recv OK
         rx_data = {1'b1, 8'hab, 1'b0};
         for (i = 0; i < 9; i = i + 1) begin
             repeat(16) @(posedge clk);
             rx_data = rx_data >> 1;
         end
         repeat(16) @(posedge clk);
+
+        // recv OK
         rx_data = {1'b1, 8'hfe, 1'b0};
         for (i = 0; i < 9; i = i + 1) begin
             repeat(16) @(posedge clk);
             rx_data = rx_data >> 1;
         end
+
+        // turn off
         recv_read = 1'b0;
+        repeat(16) @(posedge clk);
+        rx_data = {1'b1, 8'hca, 1'b0};
+        for (i = 0; i < 9; i = i + 1) begin
+            repeat(16) @(posedge clk);
+            rx_data = rx_data >> 1;
+        end
         repeat(100) @(posedge clk);
+        recv_read = 1'b1;
+
+        rx_data = {1'b1, 8'h55, 1'b0};
+        for (i = 0; i < 9; i = i + 1) begin
+            repeat(16) @(posedge clk);
+            rx_data = rx_data >> 1;
+        end
+        repeat(16) @(posedge clk);
+        rx_data = {1'b1, 8'h66, 1'b0};
+        for (i = 0; i < 9; i = i + 1) begin
+            repeat(16) @(posedge clk);
+            rx_data = rx_data >> 1;
+        end
+        repeat(16) @(posedge clk);
+        rx_data = {1'b1, 8'h77, 1'b0};
+        for (i = 0; i < 9; i = i + 1) begin
+            repeat(16) @(posedge clk);
+            rx_data = rx_data >> 1;
+        end
+        repeat(16) @(posedge clk);
+        recv_read = 1'b0;
+        repeat(50) @(posedge clk);
 
         $finish;
     end

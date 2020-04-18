@@ -1,8 +1,7 @@
 
 `timescale 1ns / 100ps
 
-module uart_8n1_transmitter_tb (
-);
+module tb;
     localparam CLK_PERIOD = 4;
     reg clk;
     initial clk = 1'b0;

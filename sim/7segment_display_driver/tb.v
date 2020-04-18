@@ -1,6 +1,6 @@
 `timescale 1ns / 100ps
 
-module led_display_driver_tb();
+module tb;
 
     wire[7:0] display_led_segments;
     wire[5:0] display_led_enable_mask;
@@ -21,7 +21,7 @@ module led_display_driver_tb();
 
     initial #5000 $finish;
 
-    led_display_driver #(.CLK_RATE_HZ(10000)) subject (
+    _7segment_display_driver #(.CLK_RATE_HZ(10000)) subject (
         .data(24'h12_34_56), 
         .digit_enable_mask(6'b111111), 
         .decimal_point_enable_mask(6'b010101),

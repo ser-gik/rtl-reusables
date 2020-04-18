@@ -1,11 +1,9 @@
 
 `timescale 1ns / 100ps
 
-`include "../uart_8n1.vh"
+`include "uart_8n1.vh"
 
-module uart_8n1_clock_gen_tb #(
-    )(
-);
+module tb;
     localparam CLK_PERIOD = 4;
     reg clk;
     initial clk = 1'b0;
