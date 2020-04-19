@@ -26,7 +26,8 @@ module switch_debouncer #(
             assign sample_clk = clk;
         end
         else begin
-            reg[31:0] ticks;
+            localparam TICKS_MAX = TICKS_PER_SAMPLE / 2;
+            reg[$clog2(TICKS_MAX)-1:0] ticks;
             reg sample_clk_reg;
 
             always @(posedge clk or negedge reset_n) begin
@@ -35,7 +36,7 @@ module switch_debouncer #(
                     sample_clk_reg <= 1'b0;
                 end
                 else begin
-                    if (ticks == TICKS_PER_SAMPLE / 2) begin
+                    if (ticks == TICKS_MAX) begin
                         ticks <= 1'b0;
                         sample_clk_reg <= ~sample_clk_reg;
                     end
