@@ -31,7 +31,8 @@ SCRIPT_DIR=`dirname "$(readlink -f "$0")"`
 
 pushd $SCRIPT_DIR
 
-TESTNAME=$1
+MODE=$1
+TESTNAME=$2
 
 if [ ! -d "$TESTNAME" ]; then
     >&2 echo Bad test name - $TESTNAME
@@ -40,21 +41,29 @@ fi
 
 pushd $TESTNAME
 
-if [ -f "wave.do" ]; then
-    VSIM_WAVE="-do wave.do"
-fi
-
 if [ ! -d "work" ]; then
     vlib work
 fi
 
 vlog $VLOG_COMMON $VLOG_DEFINES $VLOG_INCDIRS $VLOG_LIBS tb.v
 
-vsim $VSIM_COMMON -gui $VSIM_WAVE tb &
+case $MODE in
+    gui)
+        if [ -f "wave.do" ]; then
+            VSIM_WAVE="-do wave.do"
+        fi
+        vsim $VSIM_COMMON -gui $VSIM_WAVE tb &
+        ;;
+    batch)
+        vsim $VSIM_COMMON -batch -do "run -all;quit" tb
+        ;;
+    *)
+        >&2 echo Bad mode - $MODE
+        exit 1;
+        ;;
+esac
 
 popd
 
 popd
-
-
 
