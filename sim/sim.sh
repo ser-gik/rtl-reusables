@@ -25,6 +25,7 @@ VLOG_LIBS="\
 VSIM_COMMON="\
     -wlfdeleteonquit \
     -nolog \
+    -t 1ns \
     "
 
 SCRIPT_DIR=`dirname "$(readlink -f "$0")"`
