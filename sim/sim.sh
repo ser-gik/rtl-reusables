@@ -12,7 +12,6 @@ VLOG_DEFINES="\
     "
 
 VLOG_INCDIRS="\
-    +incdir+../../rtl/7segment/ \
     +incdir+../../rtl/uart_8n1/ \
     "
 
@@ -20,6 +19,7 @@ VLOG_LIBS="\
     +libext+.v \
     -y ../../rtl/7segment/ \
     -y ../../rtl/uart_8n1/ \
+    -y ../../rtl/misc/ \
     "
 
 VSIM_COMMON="\
@@ -49,6 +49,9 @@ fi
 vlog $VLOG_COMMON $VLOG_DEFINES $VLOG_INCDIRS $VLOG_LIBS tb.v
 
 case $MODE in
+    compile)
+        # we are done, no op
+        ;;
     gui)
         if [ -f "wave.do" ]; then
             VSIM_WAVE="-do wave.do"
