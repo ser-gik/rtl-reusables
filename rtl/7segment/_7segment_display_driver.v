@@ -93,15 +93,24 @@ module _7segment_display_driver #(
 
     always @(posedge segment_clk or negedge reset_n) begin
         if (~reset_n) begin
-            data_reg <= data;
-            cur_active <= 1'b1;
+            data_reg <= 1'b0;
         end
-        else if (~(|cur_active[WIDTH_NIBBLES-2:0])) begin
+        else if (~|cur_active[WIDTH_NIBBLES-2:0]) begin
             data_reg <= data;
-            cur_active <= 1'b1;
         end
         else begin
             data_reg <= {{4{1'b0}}, data_reg[WIDTH_NIBBLES*4-1:4]};
+        end
+    end
+
+    always @(posedge segment_clk or negedge reset_n) begin
+        if (~reset_n) begin
+            cur_active <= 1'b0;
+        end
+        else if (~(|cur_active[WIDTH_NIBBLES-2:0])) begin
+            cur_active <= 1'b1;
+        end
+        else begin
             cur_active <= {cur_active[WIDTH_NIBBLES-2:0], 1'b0};
         end
     end
