@@ -1,7 +1,7 @@
 
 module binary_to_bcd_transcoder #(
     parameter WIDTH = 8,
-    parameter OUT_WIDTH = $ceil($log10(2 ** WIDTH - 1)) * 4
+    parameter OUT_WIDTH = $rtoi($ceil($log10(2 ** WIDTH - 1))) * 4
     )(
     input wire[WIDTH-1:0] in,
     output wire[OUT_WIDTH-1:0] out,
@@ -29,7 +29,7 @@ module binary_to_bcd_transcoder #(
     endfunction
 
 
-    reg[$clog2(WIDTH):0] state;
+    reg[$clog2(WIDTH)-1:0] state;
 
     always @(posedge clk or negedge reset_n) begin
         if (~reset_n) begin
@@ -57,21 +57,21 @@ module binary_to_bcd_transcoder #(
     end
 
     reg[OUT_WIDTH-1:0] dst_reg;
-    wire[OUT_WIDTH-1:0] next_dst_reg;
+    wire[OUT_WIDTH:0] next_dst_reg;
 
     assign next_dst_reg[0] = src_reg[WIDTH-1];
     genvar i;
     for (i = 0; i < OUT_WIDTH - 4; i = i + 4) begin: next_dst
         assign next_dst_reg[4 + i:1 + i] = split(dst_reg[3 + i:0 + i]);
     end
-    assign next_dst_reg[OUT_WIDTH-1:OUT_WIDTH-3] = split(dst_reg[OUT_WIDTH-1:OUT_WIDTH-4]);
+    assign next_dst_reg[OUT_WIDTH:OUT_WIDTH-3] = split(dst_reg[OUT_WIDTH-1:OUT_WIDTH-4]);
 
     always @(posedge clk or negedge reset_n) begin
         if (~reset_n) begin
             dst_reg <= {OUT_WIDTH{1'b0}};
         end
         else begin
-            dst_reg <= restart ? {OUT_WIDTH{1'b0}} : next_dst_reg;
+            dst_reg <= restart ? {OUT_WIDTH{1'b0}} : next_dst_reg[OUT_WIDTH-1:0];
         end
     end
 
@@ -84,7 +84,7 @@ module binary_to_bcd_transcoder #(
             out_reg <= 1'b0;
         end
         else if (ready) begin
-            out_reg <= next_dst_reg;
+            out_reg <= next_dst_reg[OUT_WIDTH-1:0];
         end
     end
 
