@@ -111,5 +111,27 @@ module binary_to_bcd_transcoder #(
         end
     end
 
+`ifdef REUSABLES_CHECKERS_ENABLED
+    `include "std_ovl_defines.h"
+
+    ovl_one_hot #(
+        .severity_level(`OVL_ERROR),
+        .width(WIDTH),
+        .property_type(`OVL_ASSERT),
+        .msg("state is not one-hot"),
+        .coverage_level(`OVL_COVER_DEFAULT),
+        .clock_edge(`OVL_POSEDGE),
+        .reset_polarity(`OVL_ACTIVE_LOW),
+        .gating_type(`OVL_GATE_NONE)
+    ) state_is_one_hot (
+        .clock(clk),
+        .reset(reset_n),
+        .enable(1'b0),
+        .test_expr(state),
+        .fire()
+    );
+
+`endif
+
 endmodule
 

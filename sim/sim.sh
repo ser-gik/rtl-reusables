@@ -7,8 +7,6 @@ VLOG_COMMON="\
     "
 
 VLOG_DEFINES="\
-    +define+OVL_VERILOG \
-    +define+OVL_ASSERT_ON \
     "
 
 VLOG_INCDIRS="\
@@ -23,10 +21,28 @@ VLOG_LIBS="\
     "
 
 VSIM_COMMON="\
-    -wlfdeleteonquit \
     -nolog \
     -t 1ns \
     "
+
+if [ ! -z ${OVL_HOME} ]; then
+    VLOG_DEFINES="\
+        ${VLOG_DEFINES} \
+        +define+OVL_VERILOG \
+        +define+OVL_ASSERT_ON \
+        +define+REUSABLES_CHECKERS_ENABLED \
+        "
+    VLOG_INCDIRS="\
+        ${VLOG_INCDIRS} \
+        +incdir+${OVL_HOME} \
+        "
+    VLOG_LIBS="\
+        ${VLOG_LIBS}
+        +libext+.v \
+        -y ${OVL_HOME} \
+        "
+fi
+
 
 SCRIPT_DIR=`dirname "$(readlink -f "$0")"`
 
