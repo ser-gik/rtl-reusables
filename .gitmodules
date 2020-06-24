@@ -1,0 +1,3 @@
+[submodule "dvb"]
+	path = dvb
+	url = git@github.com:ser-gik/dvb.git
