@@ -5,8 +5,7 @@
 // Transmits provided data in UART frame format 8N1,
 // (8 data bits, no parity, 1 stop bit).
 //
-module uart_8n1_transmitter #(
-    )(
+module uart_8n1_transmitter (
     // Word to transmit
     input[7:0] trans_data,
     // Should be asserted to initiate send cycle, is ignored

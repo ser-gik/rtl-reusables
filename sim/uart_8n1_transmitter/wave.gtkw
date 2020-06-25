@@ -1,0 +1,55 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Wed Jun 24 15:56:19 2020
+[*]
+[dumpfile] "C:\Users\mgura\Desktop\reusables\sim\.dvb-build\uart_8n1_transmitter-icarus\dump.lxt"
+[dumpfile_mtime] "Wed Jun 24 15:53:29 2020"
+[dumpfile_size] 11145
+[savefile] "C:\Users\mgura\Desktop\reusables\sim\uart_8n1_transmitter\wave.gtkw"
+[timestart] 0
+[size] 1920 1017
+[pos] -1 -1
+*-20.083092 2 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top_wrapper.
+[treeopen] top_wrapper.tb_instance.
+[sst_width] 211
+[signals_width] 214
+[sst_expanded] 1
+[sst_vpaned_height] 301
+@200
+-in
+@28
+top_wrapper.tb_instance.subject.clk_baud_16x[0]
+top_wrapper.tb_instance.subject.reset[0]
+@22
+top_wrapper.tb_instance.subject.trans_data[7:0]
+@28
+top_wrapper.tb_instance.subject.trans_write[0]
+@200
+-out
+@28
+top_wrapper.tb_instance.subject.trans_busy[0]
+top_wrapper.tb_instance.subject.tx[0]
+@200
+-internal
+@22
+top_wrapper.tb_instance.subject.frame[8:0]
+@28
+top_wrapper.tb_instance.subject.should_send_next_bit[0]
+top_wrapper.tb_instance.subject.should_start[0]
+top_wrapper.tb_instance.subject.should_stop[0]
+@c00023
+top_wrapper.tb_instance.subject.state[7:0]
+@28
+(0)top_wrapper.tb_instance.subject.state[7:0]
+(1)top_wrapper.tb_instance.subject.state[7:0]
+(2)top_wrapper.tb_instance.subject.state[7:0]
+(3)top_wrapper.tb_instance.subject.state[7:0]
+(4)top_wrapper.tb_instance.subject.state[7:0]
+(5)top_wrapper.tb_instance.subject.state[7:0]
+(6)top_wrapper.tb_instance.subject.state[7:0]
+(7)top_wrapper.tb_instance.subject.state[7:0]
+@1401201
+-group_end
+[pattern_trace] 1
+[pattern_trace] 0

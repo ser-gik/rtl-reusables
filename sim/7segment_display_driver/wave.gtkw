@@ -1,0 +1,77 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Wed Jun 24 16:19:26 2020
+[*]
+[dumpfile] "C:\Users\mgura\Desktop\reusables\sim\.dvb-build\7segment_display_driver-icarus\dump.lxt"
+[dumpfile_mtime] "Wed Jun 24 16:16:03 2020"
+[dumpfile_size] 557
+[savefile] "C:\Users\mgura\Desktop\reusables\sim\7segment_display_driver\wave.gtkw"
+[timestart] 0
+[size] 1920 1017
+[pos] -1 -1
+*-3.810710 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top_wrapper.
+[treeopen] top_wrapper.tb_instance.
+[sst_width] 211
+[signals_width] 246
+[sst_expanded] 1
+[sst_vpaned_height] 301
+@200
+-in
+@28
+top_wrapper.tb_instance.subject.clk[0]
+top_wrapper.tb_instance.subject.reset_n[0]
+@22
+top_wrapper.tb_instance.subject.data[23:0]
+@c00022
+top_wrapper.tb_instance.subject.digit_enable[5:0]
+@28
+(0)top_wrapper.tb_instance.subject.digit_enable[5:0]
+(1)top_wrapper.tb_instance.subject.digit_enable[5:0]
+(2)top_wrapper.tb_instance.subject.digit_enable[5:0]
+(3)top_wrapper.tb_instance.subject.digit_enable[5:0]
+(4)top_wrapper.tb_instance.subject.digit_enable[5:0]
+(5)top_wrapper.tb_instance.subject.digit_enable[5:0]
+@1401200
+-group_end
+@22
+top_wrapper.tb_instance.subject.decimal_point_enable[5:0]
+@200
+-out
+@800023
+top_wrapper.tb_instance.subject.display_led_segments[7:0]
+@29
+(0)top_wrapper.tb_instance.subject.display_led_segments[7:0]
+(1)top_wrapper.tb_instance.subject.display_led_segments[7:0]
+(2)top_wrapper.tb_instance.subject.display_led_segments[7:0]
+(3)top_wrapper.tb_instance.subject.display_led_segments[7:0]
+(4)top_wrapper.tb_instance.subject.display_led_segments[7:0]
+(5)top_wrapper.tb_instance.subject.display_led_segments[7:0]
+(6)top_wrapper.tb_instance.subject.display_led_segments[7:0]
+(7)top_wrapper.tb_instance.subject.display_led_segments[7:0]
+@1001201
+-group_end
+@c00022
+top_wrapper.tb_instance.subject.display_segment_enable[5:0]
+@28
+(0)top_wrapper.tb_instance.subject.display_segment_enable[5:0]
+(1)top_wrapper.tb_instance.subject.display_segment_enable[5:0]
+(2)top_wrapper.tb_instance.subject.display_segment_enable[5:0]
+(3)top_wrapper.tb_instance.subject.display_segment_enable[5:0]
+(4)top_wrapper.tb_instance.subject.display_segment_enable[5:0]
+(5)top_wrapper.tb_instance.subject.display_segment_enable[5:0]
+@1401200
+-group_end
+@200
+-internal
+@22
+top_wrapper.tb_instance.subject.cur_active[5:0]
+top_wrapper.tb_instance.subject.data_reg[23:0]
+@28
+top_wrapper.tb_instance.subject.decimal_point[0]
+@22
+top_wrapper.tb_instance.subject.pattern[7:0]
+@28
+top_wrapper.tb_instance.subject.segment_clk[0]
+[pattern_trace] 1
+[pattern_trace] 0

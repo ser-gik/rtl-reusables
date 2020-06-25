@@ -40,16 +40,17 @@ module _7segment_display_driver #(
     input wire reset_n,
     input wire clk
 );
+    // Clock divider config.
+    // Input clock frequency must be divided to get something suitable for refreshing LED digits.
+    localparam DISPLAY_REFRESH_RATE_HZ = 80;
+    localparam DIGIT_REFRESH_RATE_HZ = DISPLAY_REFRESH_RATE_HZ * WIDTH_NIBBLES;
+    // XST doesn't allow clog2() for localparams
+    parameter CLK_DIVIDER_STAGES = $clog2(CLK_RATE_HZ / DIGIT_REFRESH_RATE_HZ) - 1;
+
     wire segment_clk;
 
     generate
         if (CLK_DIVIDE) begin
-            // Divide input clock frequency to get something suitable for refreshing LED digits.
-            localparam DISPLAY_REFRESH_RATE_HZ = 80;
-            localparam DIGIT_REFRESH_RATE_HZ = DISPLAY_REFRESH_RATE_HZ * WIDTH_NIBBLES;
-            // ISE doesn't allow clog2() for localparams
-            parameter CLK_DIVIDER_STAGES = $clog2(CLK_RATE_HZ / DIGIT_REFRESH_RATE_HZ) - 1;
-
             reg[CLK_DIVIDER_STAGES-1:0] div_stages;
             always @(posedge clk or negedge reset_n) begin
                 if (~reset_n) begin

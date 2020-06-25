@@ -1,0 +1,28 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Wed Jun 24 15:46:51 2020
+[*]
+[dumpfile] "C:\Users\mgura\Desktop\reusables\sim\.dvb-build\uart_8n1_clock_gen-icarus\dump.lxt"
+[dumpfile_mtime] "Wed Jun 24 15:46:26 2020"
+[dumpfile_size] 1986
+[savefile] "C:\Users\mgura\Desktop\reusables\sim\uart_8n1_clock_gen\wave.gtkw"
+[timestart] 0
+[size] 1920 1017
+[pos] -165 -165
+*-17.319157 3 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top_wrapper.
+[treeopen] top_wrapper.tb_instance.
+[sst_width] 211
+[signals_width] 182
+[sst_expanded] 1
+[sst_vpaned_height] 301
+@28
+top_wrapper.tb_instance.subject.baud_rate[1:0]
+top_wrapper.tb_instance.subject.clk_baud_16x[0]
+top_wrapper.tb_instance.subject.clk_src[0]
+top_wrapper.tb_instance.subject.counter[1:0]
+top_wrapper.tb_instance.subject.next_threshold[1:0]
+top_wrapper.tb_instance.subject.reset[0]
+top_wrapper.tb_instance.subject.threshold[1:0]
+[pattern_trace] 1
+[pattern_trace] 0

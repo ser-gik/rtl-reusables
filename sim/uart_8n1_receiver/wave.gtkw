@@ -1,0 +1,62 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Wed Jun 24 15:59:41 2020
+[*]
+[dumpfile] "C:\Users\mgura\Desktop\reusables\sim\.dvb-build\uart_8n1_receiver-icarus\dump.lxt"
+[dumpfile_mtime] "Wed Jun 24 15:56:52 2020"
+[dumpfile_size] 9445
+[savefile] "C:\Users\mgura\Desktop\reusables\sim\uart_8n1_receiver\wave.gtkw"
+[timestart] 0
+[size] 1920 1017
+[pos] -35 -35
+*-19.701933 1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top_wrapper.
+[treeopen] top_wrapper.tb_instance.
+[sst_width] 211
+[signals_width] 166
+[sst_expanded] 1
+[sst_vpaned_height] 301
+@200
+-in
+@28
+top_wrapper.tb_instance.subject.clk_baud_16x[0]
+top_wrapper.tb_instance.subject.reset[0]
+top_wrapper.tb_instance.subject.rx[0]
+top_wrapper.tb_instance.subject.recv_read[0]
+@200
+-out
+@28
+top_wrapper.tb_instance.subject.recv_busy[0]
+top_wrapper.tb_instance.subject.recv_error[0]
+@c00023
+top_wrapper.tb_instance.subject.recv_data[7:0]
+@28
+(0)top_wrapper.tb_instance.subject.recv_data[7:0]
+(1)top_wrapper.tb_instance.subject.recv_data[7:0]
+(2)top_wrapper.tb_instance.subject.recv_data[7:0]
+(3)top_wrapper.tb_instance.subject.recv_data[7:0]
+(4)top_wrapper.tb_instance.subject.recv_data[7:0]
+(5)top_wrapper.tb_instance.subject.recv_data[7:0]
+(6)top_wrapper.tb_instance.subject.recv_data[7:0]
+(7)top_wrapper.tb_instance.subject.recv_data[7:0]
+@1401201
+-group_end
+@200
+-internal
+@22
+top_wrapper.tb_instance.subject.accumulator[7:0]
+@28
+top_wrapper.tb_instance.subject.cycle_finish[0]
+top_wrapper.tb_instance.subject.error[0]
+top_wrapper.tb_instance.subject.framing_error[0]
+top_wrapper.tb_instance.subject.is_data_bit[0]
+top_wrapper.tb_instance.subject.is_sampled[0]
+top_wrapper.tb_instance.subject.is_start_bit[0]
+top_wrapper.tb_instance.subject.is_stop_bit[0]
+top_wrapper.tb_instance.subject.rx_sync[0]
+top_wrapper.tb_instance.subject.sample[0]
+top_wrapper.tb_instance.subject.sampling_error[0]
+@22
+top_wrapper.tb_instance.subject.state[7:0]
+[pattern_trace] 1
+[pattern_trace] 0

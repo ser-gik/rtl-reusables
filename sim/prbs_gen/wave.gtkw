@@ -1,0 +1,101 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Wed Jun 24 15:44:38 2020
+[*]
+[dumpfile] "C:\Users\mgura\Desktop\reusables\sim\.dvb-build\prbs_gen-icarus\dump.lxt"
+[dumpfile_mtime] "Wed Jun 24 15:42:48 2020"
+[dumpfile_size] 56709
+[savefile] "C:\Users\mgura\Desktop\reusables\sim\prbs_gen\wave.gtkw"
+[timestart] 0
+[size] 1920 1017
+[pos] -87 -87
+*-7.382505 1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top_wrapper.
+[treeopen] top_wrapper.tb_instance.
+[sst_width] 211
+[signals_width] 158
+[sst_expanded] 1
+[sst_vpaned_height] 301
+@28
+top_wrapper.tb_instance.subject.clk[0]
+@c00022
+top_wrapper.tb_instance.subject.flops[31:0]
+@28
+(0)top_wrapper.tb_instance.subject.flops[31:0]
+(1)top_wrapper.tb_instance.subject.flops[31:0]
+(2)top_wrapper.tb_instance.subject.flops[31:0]
+(3)top_wrapper.tb_instance.subject.flops[31:0]
+(4)top_wrapper.tb_instance.subject.flops[31:0]
+(5)top_wrapper.tb_instance.subject.flops[31:0]
+(6)top_wrapper.tb_instance.subject.flops[31:0]
+(7)top_wrapper.tb_instance.subject.flops[31:0]
+(8)top_wrapper.tb_instance.subject.flops[31:0]
+(9)top_wrapper.tb_instance.subject.flops[31:0]
+(10)top_wrapper.tb_instance.subject.flops[31:0]
+(11)top_wrapper.tb_instance.subject.flops[31:0]
+(12)top_wrapper.tb_instance.subject.flops[31:0]
+(13)top_wrapper.tb_instance.subject.flops[31:0]
+(14)top_wrapper.tb_instance.subject.flops[31:0]
+(15)top_wrapper.tb_instance.subject.flops[31:0]
+(16)top_wrapper.tb_instance.subject.flops[31:0]
+(17)top_wrapper.tb_instance.subject.flops[31:0]
+(18)top_wrapper.tb_instance.subject.flops[31:0]
+(19)top_wrapper.tb_instance.subject.flops[31:0]
+(20)top_wrapper.tb_instance.subject.flops[31:0]
+(21)top_wrapper.tb_instance.subject.flops[31:0]
+(22)top_wrapper.tb_instance.subject.flops[31:0]
+(23)top_wrapper.tb_instance.subject.flops[31:0]
+(24)top_wrapper.tb_instance.subject.flops[31:0]
+(25)top_wrapper.tb_instance.subject.flops[31:0]
+(26)top_wrapper.tb_instance.subject.flops[31:0]
+(27)top_wrapper.tb_instance.subject.flops[31:0]
+(28)top_wrapper.tb_instance.subject.flops[31:0]
+(29)top_wrapper.tb_instance.subject.flops[31:0]
+(30)top_wrapper.tb_instance.subject.flops[31:0]
+(31)top_wrapper.tb_instance.subject.flops[31:0]
+@1401200
+-group_end
+@23
+top_wrapper.tb_instance.subject.next_flops[31:0]
+@28
+top_wrapper.tb_instance.subject.out[0]
+top_wrapper.tb_instance.subject.reset_n[0]
+@c00022
+top_wrapper.tb_instance.subject.seed[31:0]
+@28
+(0)top_wrapper.tb_instance.subject.seed[31:0]
+(1)top_wrapper.tb_instance.subject.seed[31:0]
+(2)top_wrapper.tb_instance.subject.seed[31:0]
+(3)top_wrapper.tb_instance.subject.seed[31:0]
+(4)top_wrapper.tb_instance.subject.seed[31:0]
+(5)top_wrapper.tb_instance.subject.seed[31:0]
+(6)top_wrapper.tb_instance.subject.seed[31:0]
+(7)top_wrapper.tb_instance.subject.seed[31:0]
+(8)top_wrapper.tb_instance.subject.seed[31:0]
+(9)top_wrapper.tb_instance.subject.seed[31:0]
+(10)top_wrapper.tb_instance.subject.seed[31:0]
+(11)top_wrapper.tb_instance.subject.seed[31:0]
+(12)top_wrapper.tb_instance.subject.seed[31:0]
+(13)top_wrapper.tb_instance.subject.seed[31:0]
+(14)top_wrapper.tb_instance.subject.seed[31:0]
+(15)top_wrapper.tb_instance.subject.seed[31:0]
+(16)top_wrapper.tb_instance.subject.seed[31:0]
+(17)top_wrapper.tb_instance.subject.seed[31:0]
+(18)top_wrapper.tb_instance.subject.seed[31:0]
+(19)top_wrapper.tb_instance.subject.seed[31:0]
+(20)top_wrapper.tb_instance.subject.seed[31:0]
+(21)top_wrapper.tb_instance.subject.seed[31:0]
+(22)top_wrapper.tb_instance.subject.seed[31:0]
+(23)top_wrapper.tb_instance.subject.seed[31:0]
+(24)top_wrapper.tb_instance.subject.seed[31:0]
+(25)top_wrapper.tb_instance.subject.seed[31:0]
+(26)top_wrapper.tb_instance.subject.seed[31:0]
+(27)top_wrapper.tb_instance.subject.seed[31:0]
+(28)top_wrapper.tb_instance.subject.seed[31:0]
+(29)top_wrapper.tb_instance.subject.seed[31:0]
+(30)top_wrapper.tb_instance.subject.seed[31:0]
+(31)top_wrapper.tb_instance.subject.seed[31:0]
+@1401200
+-group_end
+[pattern_trace] 1
+[pattern_trace] 0

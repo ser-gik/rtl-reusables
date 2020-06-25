@@ -5,8 +5,7 @@
 // Receives data in an UART frame format 8N1,
 // (8 data bits, no parity, 1 stop bit).
 //
-module uart_8n1_receiver #(
-    )(
+module uart_8n1_receiver (
     // Received word
     output reg[7:0] recv_data,
     // Should be asserted to start receive cycle on next clock,

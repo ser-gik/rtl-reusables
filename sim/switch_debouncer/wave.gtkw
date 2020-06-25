@@ -1,0 +1,41 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Wed Jun 24 15:46:00 2020
+[*]
+[dumpfile] "C:\Users\mgura\Desktop\reusables\sim\.dvb-build\switch_debouncer-icarus\dump.lxt"
+[dumpfile_mtime] "Wed Jun 24 15:44:53 2020"
+[dumpfile_size] 799
+[savefile] "C:\Users\mgura\Desktop\reusables\sim\switch_debouncer\wave.gtkw"
+[timestart] 0
+[size] 1920 1017
+[pos] -113 -113
+*-3.685866 47 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top_wrapper.
+[treeopen] top_wrapper.tb_instance.
+[treeopen] top_wrapper.tb_instance.subject.
+[sst_width] 211
+[signals_width] 134
+[sst_expanded] 1
+[sst_vpaned_height] 301
+@28
+top_wrapper.tb_instance.subject.clk[0]
+@800028
+top_wrapper.tb_instance.subject.in[2:0]
+@28
+(0)top_wrapper.tb_instance.subject.in[2:0]
+(1)top_wrapper.tb_instance.subject.in[2:0]
+(2)top_wrapper.tb_instance.subject.in[2:0]
+@1001200
+-group_end
+@800029
+top_wrapper.tb_instance.subject.out[2:0]
+@29
+(0)top_wrapper.tb_instance.subject.out[2:0]
+(1)top_wrapper.tb_instance.subject.out[2:0]
+@1001201
+-group_end
+@28
+top_wrapper.tb_instance.subject.reset_n[0]
+top_wrapper.tb_instance.subject.sample_clk[0]
+[pattern_trace] 1
+[pattern_trace] 0
