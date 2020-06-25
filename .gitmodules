@@ -1,3 +1,6 @@
 [submodule "dvb"]
 	path = dvb
 	url = git@github.com:ser-gik/dvb.git
+[submodule "sim/ovl-dvb"]
+	path = sim/ovl-dvb
+	url = git@github.com:ser-gik/ovl-dvb.git

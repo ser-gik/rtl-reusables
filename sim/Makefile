@@ -17,7 +17,10 @@ REUSABLES_TESTBENCHES := \
 include ../dvb/dvb.mk
 
 # Import reusables
-$(call dvb_add_bundles, ../)
+$(call dvb_add_bundles, \
+	../ \
+	ovl-dvb/ \
+)
 
 #
 # Common test pile structure
