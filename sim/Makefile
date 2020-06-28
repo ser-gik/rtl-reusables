@@ -14,7 +14,7 @@ REUSABLES_TESTBENCHES := \
 
 
 # Use DVB to manage simulation
-include ../dvb/dvb.mk
+include dvb/dvb.mk
 
 # Import reusables
 $(call dvb_add_bundles, \
