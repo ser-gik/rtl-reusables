@@ -14,7 +14,8 @@ REUSABLES_TESTBENCHES := \
 	uart_8n1 \
 	uart_8n1_clock_gen \
 	uart_8n1_receiver \
-	uart_8n1_transmitter
+	uart_8n1_transmitter \
+	register
 
 
 # Use DVB to manage simulation
@@ -34,6 +35,9 @@ include $(DVB_PILE_BEGIN)
 DVB_PILE := $(1)
 DVB_TOP_MODULE := $(1)/tb.v
 DVB_REQUIRED := reusables
+DVB_DEFINES := REUSABLES_REG_CLK_RISING=1 \
+				REUSABLES_REG_RESET_ACTIVE_HIGH=1 \
+				REUSABLES_REG_RESET_SYNC=1
 ifeq ($(DVB_TOOLCHAIN),icarus)
 DVB_WAVEFORM_VIEWER_CONFIG := $(1)/wave.gtkw
 endif
