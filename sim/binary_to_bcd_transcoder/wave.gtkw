@@ -1,63 +1,46 @@
 [*]
 [*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
-[*] Wed Jun 24 05:29:31 2020
+[*] Mon Jun 29 01:17:19 2020
 [*]
-[dumpfile] "C:\Users\mgura\Desktop\reusables\sim\.dvb-build\binary_to_bcd_transcoder-icarus\dump.lxt"
-[dumpfile_mtime] "Wed Jun 24 05:28:48 2020"
-[dumpfile_size] 6371
+[dumpfile] "C:\Users\mgura\Desktop\reusables\sim\.dvb-build\binary_to_bcd_transcoder-icarus\dump.fst"
+[dumpfile_mtime] "Mon Jun 29 01:14:29 2020"
+[dumpfile_size] 16275
 [savefile] "C:\Users\mgura\Desktop\reusables\sim\binary_to_bcd_transcoder\wave.gtkw"
 [timestart] 0
 [size] 1920 1017
 [pos] -1 -1
-*-5.031731 75 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-5.226448 28 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] top_wrapper.
 [treeopen] top_wrapper.tb_instance.
-[sst_width] 211
-[signals_width] 263
+[treeopen] top_wrapper.tb_instance.subject.
+[sst_width] 304
+[signals_width] 346
 [sst_expanded] 1
-[sst_vpaned_height] 301
-@200
--in
+[sst_vpaned_height] 354
+@800200
+-*** Ports ***
 @28
-top_wrapper.tb_instance.subject.clk[0]
-top_wrapper.tb_instance.subject.reset_n[0]
+top_wrapper.tb_instance.subject.clk
+top_wrapper.tb_instance.subject.reset_n
 @24
 top_wrapper.tb_instance.subject.in[15:0]
-@200
--out
 @22
 top_wrapper.tb_instance.subject.out[19:0]
-@200
--internal
+@1000200
+-*** Ports ***
+@800200
+-*** Internals ***
 @22
 top_wrapper.tb_instance.subject.dst_reg[19:0]
 top_wrapper.tb_instance.subject.next_dst_reg[20:0]
 top_wrapper.tb_instance.subject.out_reg[19:0]
 @28
-top_wrapper.tb_instance.subject.ready[0]
-top_wrapper.tb_instance.subject.restart[0]
+top_wrapper.tb_instance.subject.ready
+top_wrapper.tb_instance.subject.restart
 @22
 top_wrapper.tb_instance.subject.src_reg[15:0]
-@800023
 top_wrapper.tb_instance.subject.state[15:0]
-@29
-(0)top_wrapper.tb_instance.subject.state[15:0]
-(1)top_wrapper.tb_instance.subject.state[15:0]
-(2)top_wrapper.tb_instance.subject.state[15:0]
-(3)top_wrapper.tb_instance.subject.state[15:0]
-(4)top_wrapper.tb_instance.subject.state[15:0]
-(5)top_wrapper.tb_instance.subject.state[15:0]
-(6)top_wrapper.tb_instance.subject.state[15:0]
-(7)top_wrapper.tb_instance.subject.state[15:0]
-(8)top_wrapper.tb_instance.subject.state[15:0]
-(9)top_wrapper.tb_instance.subject.state[15:0]
-(10)top_wrapper.tb_instance.subject.state[15:0]
-(11)top_wrapper.tb_instance.subject.state[15:0]
-(12)top_wrapper.tb_instance.subject.state[15:0]
-(13)top_wrapper.tb_instance.subject.state[15:0]
-(14)top_wrapper.tb_instance.subject.state[15:0]
-(15)top_wrapper.tb_instance.subject.state[15:0]
-@1001201
--group_end
+@1000200
+-*** Internals ***
 [pattern_trace] 1
 [pattern_trace] 0

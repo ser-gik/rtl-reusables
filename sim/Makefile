@@ -1,6 +1,10 @@
-
 #
-# All available tests
+# All available tests.
+# Each dir must follow next structure
+# dir \
+#     |- tb.v
+#     |- wave.do
+#     |- wave.gtkw
 #
 REUSABLES_TESTBENCHES := \
 	7segment_display_driver \
@@ -16,19 +20,14 @@ REUSABLES_TESTBENCHES := \
 # Use DVB to manage simulation
 include dvb/dvb.mk
 
-# Import reusables
 $(call dvb_add_bundles, \
 	../ \
-	ovl-dvb/ \
+	$(if $(WITH_OVL), ovl-dvb/) \
 )
 
 #
-# Common test pile structure
-# dir \
-#     |- tb.v
-#     |- wave.do
-#     |- wave.gtkw
-# $(1) - pile directory
+# function to define a pile for test dir.
+# $(1) - test directory
 #
 define reusables_pile
 include $(DVB_PILE_BEGIN)
