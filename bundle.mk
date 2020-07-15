@@ -5,7 +5,7 @@
 #
 
 include $(DVB_BUNDLE_BEGIN)
-DVB_BUNDLE := reusables
+DVB_NAME := reusables
 DVB_LIBDIRS := rtl/7segment \
 				rtl/misc \
 				rtl/uart_8n1 \

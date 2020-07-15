@@ -25,22 +25,27 @@ $(call dvb_add_bundles, \
 	$(if $(WITH_OVL), ovl-dvb/) \
 )
 
+include $(DVB_PILE_BEGIN)
+DVB_NAME := reusables-sim
+DVB_REQUIRED := reusables
+include $(DVB_PILE_END)
+
 #
-# function to define a pile for test dir.
+# function to define a simulation for test dir.
 # $(1) - test directory
 #
 define reusables_pile
-include $(DVB_PILE_BEGIN)
-DVB_PILE := $(1)
-DVB_TOP_MODULE := $(1)/tb.v
-DVB_REQUIRED := reusables
+include $(DVB_SIMULATION_BEGIN)
+DVB_NAME := $(1)
+DVB_PILE := reusables-sim
+DVB_TESTBENCH := $(1)/tb.v
 ifeq ($(DVB_TOOLCHAIN),icarus)
 DVB_WAVEFORM_VIEWER_CONFIG := $(1)/wave.gtkw
 endif
 ifeq ($(DVB_TOOLCHAIN),mentor)
 DVB_WAVEFORM_VIEWER_CONFIG := $(1)/wave.do
 endif
-include $(DVB_PILE_END)
+include $(DVB_SIMULATION_END)
 endef
 
 # Expand all
