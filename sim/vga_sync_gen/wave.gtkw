@@ -1,0 +1,59 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Mon Aug 10 04:47:27 2020
+[*]
+[dumpfile] "C:\Users\mgura\Desktop\reusables\sim\.dvb-build\simulation\vga_sync_gen-icarus\dump.fst"
+[dumpfile_mtime] "Sun Aug 09 19:27:58 2020"
+[dumpfile_size] 2388
+[savefile] "C:\Users\mgura\Desktop\reusables\sim\vga_sync_gen\wave.gtkw"
+[timestart] 5012000
+[size] 1920 1017
+[pos] -1 -1
+*-19.389217 8820800 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top_wrapper.
+[treeopen] top_wrapper.tb_instance.
+[sst_width] 211
+[signals_width] 200
+[sst_expanded] 1
+[sst_vpaned_height] 301
+@800200
+-*** INPUTS ***
+@28
+top_wrapper.tb_instance.clk
+top_wrapper.tb_instance.reset_n
+@1000200
+-*** INPUTS ***
+@800200
+-*** OUTPUTS ***
+@28
+top_wrapper.tb_instance.hsync
+top_wrapper.tb_instance.vsync
+top_wrapper.tb_instance.pixel_visible
+@800022
+top_wrapper.tb_instance.pixel_x[6:0]
+@28
+(0)top_wrapper.tb_instance.pixel_x[6:0]
+(1)top_wrapper.tb_instance.pixel_x[6:0]
+(2)top_wrapper.tb_instance.pixel_x[6:0]
+(3)top_wrapper.tb_instance.pixel_x[6:0]
+(4)top_wrapper.tb_instance.pixel_x[6:0]
+(5)top_wrapper.tb_instance.pixel_x[6:0]
+(6)top_wrapper.tb_instance.pixel_x[6:0]
+@1001200
+-group_end
+@800022
+top_wrapper.tb_instance.pixel_y[6:0]
+@28
+(0)top_wrapper.tb_instance.pixel_y[6:0]
+(1)top_wrapper.tb_instance.pixel_y[6:0]
+(2)top_wrapper.tb_instance.pixel_y[6:0]
+(3)top_wrapper.tb_instance.pixel_y[6:0]
+(4)top_wrapper.tb_instance.pixel_y[6:0]
+(5)top_wrapper.tb_instance.pixel_y[6:0]
+(6)top_wrapper.tb_instance.pixel_y[6:0]
+@1001200
+-group_end
+@1000200
+-*** OUTPUTS ***
+[pattern_trace] 1
+[pattern_trace] 0

@@ -32,7 +32,7 @@ module vga_sync_generator #(
     localparam VTOTAL = VSIZE + VFPORCH + VSYNC + VBPORCH;
 
     parameter HBITS = $clog2(HTOTAL);
-    parameter VBITS = $clog2(VTOTAL); 
+    parameter VBITS = $clog2(VTOTAL);
 
     reg[HBITS-1:0] column;
     reg[VBITS-1:0] row;

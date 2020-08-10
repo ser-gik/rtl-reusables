@@ -14,7 +14,8 @@ REUSABLES_TESTBENCHES := \
 	uart_8n1 \
 	uart_8n1_clock_gen \
 	uart_8n1_receiver \
-	uart_8n1_transmitter
+	uart_8n1_transmitter \
+	vga_sync_gen \
 
 
 # Use DVB to manage simulation
