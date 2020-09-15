@@ -16,6 +16,7 @@ REUSABLES_TESTBENCHES := \
 	uart_8n1_receiver \
 	uart_8n1_transmitter \
 	vga_sync_gen \
+	vga_console_sync \
 
 
 # Use DVB to manage simulation

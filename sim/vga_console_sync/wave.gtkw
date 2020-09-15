@@ -1,0 +1,58 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Tue Sep 15 03:10:15 2020
+[*]
+[dumpfile] "C:\Users\mgura\Desktop\reusables\sim\.dvb-build\simulation\vga_console_sync-icarus\dump.fst"
+[dumpfile_mtime] "Tue Sep 15 02:57:55 2020"
+[dumpfile_size] 7532
+[savefile] "C:\Users\mgura\Desktop\reusables\sim\vga_console_sync\wave.gtkw"
+[timestart] 29859700
+[size] 1920 1017
+[pos] -217 -217
+*-16.038551 30094800 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top_wrapper.
+[treeopen] top_wrapper.tb_instance.
+[sst_width] 214
+[signals_width] 261
+[sst_expanded] 1
+[sst_vpaned_height] 301
+@800200
+-*** INPUTS ***
+@28
+top_wrapper.tb_instance.vga_sync.frame_start
+top_wrapper.tb_instance.vga_sync.line_start
+top_wrapper.tb_instance.vga_sync.pixel_clk
+top_wrapper.tb_instance.vga_sync.reset_n
+@1000200
+-*** INPUTS ***
+@800200
+-*** DUT1 ***
+@22
+top_wrapper.tb_instance.dut1.char_address[3:0]
+@c00023
+top_wrapper.tb_instance.dut1.glyph_column[3:0]
+@28
+(0)top_wrapper.tb_instance.dut1.glyph_column[3:0]
+(1)top_wrapper.tb_instance.dut1.glyph_column[3:0]
+(2)top_wrapper.tb_instance.dut1.glyph_column[3:0]
+(3)top_wrapper.tb_instance.dut1.glyph_column[3:0]
+@1401201
+-group_end
+@22
+top_wrapper.tb_instance.dut1.glyph_row[4:0]
+@28
+top_wrapper.tb_instance.dut1.idle
+@1000200
+-*** DUT1 ***
+@800200
+-*** DUT2 ***
+@22
+top_wrapper.tb_instance.dut2.char_address[5:0]
+top_wrapper.tb_instance.dut2.glyph_column[3:0]
+top_wrapper.tb_instance.dut2.glyph_row[4:0]
+@28
+top_wrapper.tb_instance.dut2.idle
+@1000200
+-*** DUT2 ***
+[pattern_trace] 1
+[pattern_trace] 0
