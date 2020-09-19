@@ -54,9 +54,11 @@ module vga_console_sync #(
     // which is described by module parameters.
     output idle
 );
+    // Sized versions of fundamental constants
     localparam [_GLYPH_COLUMN_WIDTH - 1:0] GLYPH_COLUMNS_MAX = GLYPH_COLUMNS - 1;
     localparam [_GLYPH_ROW_WIDTH - 1:0] GLYPH_ROWS_MAX = GLYPH_ROWS - 1;
-    // Outputs
+
+    // Output registers
     reg [_CHAR_ADDR_WIDTH - 1:0] char_address_reg;
     wire [_CHAR_ADDR_WIDTH - 1:0] char_address_reg_next;
     reg [_GLYPH_ROW_REG_WIDTH - 1:0] glyph_row_reg;
@@ -71,43 +73,43 @@ module vga_console_sync #(
     assign glyph_column = glyph_column_reg[_GLYPH_COLUMN_REG_WIDTH - 1:GLYPH_SCALE_LOG];
     assign idle = idle_reg;
 
-    // Text column of a current character.
+    // Text column number of a current character.
     reg [_CHAR_ADDR_WIDTH - 1:0] char_column_reg;
     wire [_CHAR_ADDR_WIDTH - 1:0] char_column_reg_next;
 
-    wire glyph_column_wrap;
-    assign glyph_column_wrap = line_start || glyph_column_reg ==
+    wire glyph_column_reset;
+    assign glyph_column_reset = line_start || glyph_column_reg ==
             {GLYPH_COLUMNS_MAX, {GLYPH_SCALE_LOG{1'b1}}};
 
-    wire char_column_wrap;
-    assign char_column_wrap =
-        line_start || (char_column_reg == TEXT_COLUMNS - 1 && glyph_column_wrap);
+    wire char_column_reset;
+    assign char_column_reset =
+        line_start || (char_column_reg == TEXT_COLUMNS - 1 && glyph_column_reset);
 
-    wire glyph_row_wrap;
-    assign glyph_row_wrap =
-        frame_start || (glyph_row_reg == {GLYPH_ROWS_MAX, {GLYPH_SCALE_LOG{1'b1}}} && char_column_wrap);
+    wire glyph_row_reset;
+    assign glyph_row_reset =
+        frame_start || (glyph_row_reg == {GLYPH_ROWS_MAX, {GLYPH_SCALE_LOG{1'b1}}} && char_column_reset);
 
-    wire char_address_wrap;
-    assign char_address_wrap =
-        frame_start || (char_address == TEXT_COLUMNS * TEXT_ROWS - 1 && glyph_row_wrap);
+    wire char_address_reset;
+    assign char_address_reset =
+        frame_start || (char_address == TEXT_COLUMNS * TEXT_ROWS - 1 && glyph_row_reset);
 
-    assign idle_reg_next = frame_start || (line_start && ~char_address_wrap) ?
-                            1'b0 : char_column_wrap || char_address_wrap;
+    assign idle_reg_next = frame_start || (line_start && ~char_address_reset) ?
+                            1'b0 : char_column_reset || char_address_reset;
 
-    assign glyph_column_reg_next = glyph_column_wrap ? {_GLYPH_COLUMN_REG_WIDTH{1'b0}}
+    assign glyph_column_reg_next = glyph_column_reset ? {_GLYPH_COLUMN_REG_WIDTH{1'b0}}
                                     : glyph_column_reg + 1'b1;
 
-    assign char_column_reg_next = char_column_wrap ? {_CHAR_ADDR_WIDTH{1'b0}}
-                                    : (glyph_column_wrap ? char_column_reg + 1'b1 : char_column_reg);
+    assign char_column_reg_next = char_column_reset ? {_CHAR_ADDR_WIDTH{1'b0}}
+                                    : (glyph_column_reset ? char_column_reg + 1'b1 : char_column_reg);
 
-    assign glyph_row_reg_next = glyph_row_wrap ? {_GLYPH_ROW_REG_WIDTH{1'b0}}
-                                    : (char_column_wrap ? glyph_row_reg + 1'b1 : glyph_row_reg);
+    assign glyph_row_reg_next = glyph_row_reset ? {_GLYPH_ROW_REG_WIDTH{1'b0}}
+                                    : (char_column_reset ? glyph_row_reg + 1'b1 : glyph_row_reg);
 
     assign char_address_reg_next =
-        char_address_wrap ? {_CHAR_ADDR_WIDTH{1'b0}}
-            : (glyph_row_wrap ? char_address_reg + 1'b1
-                : (char_column_wrap ? char_address_reg - char_column_reg
-                    : (glyph_column_wrap ? char_address_reg + 1'b1 : char_address_reg)));
+        char_address_reset ? {_CHAR_ADDR_WIDTH{1'b0}}
+            : (glyph_row_reset ? char_address_reg + 1'b1
+                : (char_column_reset ? char_address_reg - char_column_reg
+                    : (glyph_column_reset ? char_address_reg + 1'b1 : char_address_reg)));
 
     always @(posedge pixel_clk or negedge reset_n) begin
         if (~reset_n) begin

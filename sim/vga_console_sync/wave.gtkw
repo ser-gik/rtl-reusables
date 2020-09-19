@@ -1,15 +1,15 @@
 [*]
 [*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
-[*] Tue Sep 15 03:10:15 2020
+[*] Sat Sep 19 03:05:56 2020
 [*]
-[dumpfile] "C:\Users\mgura\Desktop\reusables\sim\.dvb-build\simulation\vga_console_sync-icarus\dump.fst"
-[dumpfile_mtime] "Tue Sep 15 02:57:55 2020"
-[dumpfile_size] 7532
-[savefile] "C:\Users\mgura\Desktop\reusables\sim\vga_console_sync\wave.gtkw"
-[timestart] 29859700
+[dumpfile] "C:\Users\mgura\Desktop\dev\reusables\sim\.dvb-build\simulation\vga_console_sync-icarus\dump.fst"
+[dumpfile_mtime] "Sat Sep 19 03:03:02 2020"
+[dumpfile_size] 7531
+[savefile] "C:\Users\mgura\Desktop\dev\reusables\sim\vga_console_sync\wave.gtkw"
+[timestart] 33381600
 [size] 1920 1017
-[pos] -217 -217
-*-16.038551 30094800 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[pos] -1 -1
+*-15.843789 33583600 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] top_wrapper.
 [treeopen] top_wrapper.tb_instance.
 [sst_width] 214
@@ -31,7 +31,7 @@ top_wrapper.tb_instance.vga_sync.reset_n
 top_wrapper.tb_instance.dut1.char_address[3:0]
 @c00023
 top_wrapper.tb_instance.dut1.glyph_column[3:0]
-@28
+@29
 (0)top_wrapper.tb_instance.dut1.glyph_column[3:0]
 (1)top_wrapper.tb_instance.dut1.glyph_column[3:0]
 (2)top_wrapper.tb_instance.dut1.glyph_column[3:0]
