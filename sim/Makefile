@@ -11,6 +11,7 @@ REUSABLES_TESTBENCHES := \
 	binary_to_bcd_transcoder \
 	prbs_gen \
 	switch_debouncer \
+	group_mux \
 	uart_8n1 \
 	uart_8n1_clock_gen \
 	uart_8n1_receiver \

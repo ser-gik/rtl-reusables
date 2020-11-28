@@ -1,0 +1,55 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Thu Sep 24 02:51:01 2020
+[*]
+[dumpfile] "C:\Users\mgura\Desktop\dev\reusables\sim\.dvb-build\simulation\group_mux-icarus\dump.fst"
+[dumpfile_mtime] "Thu Sep 24 02:49:40 2020"
+[dumpfile_size] 974
+[savefile] "C:\Users\mgura\Desktop\dev\reusables\sim\group_mux\wave.gtkw"
+[timestart] 0
+[size] 1920 1017
+[pos] -1 -1
+*-11.171667 3870 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top_wrapper.
+[treeopen] top_wrapper.tb_instance.
+[treeopen] top_wrapper.tb_instance.uut.
+[sst_width] 254
+[signals_width] 330
+[sst_expanded] 1
+[sst_vpaned_height] 300
+@800200
+-*** UUT1 ***
+@22
+top_wrapper.tb_instance.uut.in[63:0]
+top_wrapper.tb_instance.uut.select[2:0]
+@c00023
+top_wrapper.tb_instance.uut.out[7:0]
+@28
+(0)top_wrapper.tb_instance.uut.out[7:0]
+(1)top_wrapper.tb_instance.uut.out[7:0]
+(2)top_wrapper.tb_instance.uut.out[7:0]
+(3)top_wrapper.tb_instance.uut.out[7:0]
+(4)top_wrapper.tb_instance.uut.out[7:0]
+(5)top_wrapper.tb_instance.uut.out[7:0]
+(6)top_wrapper.tb_instance.uut.out[7:0]
+(7)top_wrapper.tb_instance.uut.out[7:0]
+@1401201
+-group_end
+@1000200
+-*** UUT1 ***
+@800200
+-*** UUT2 ***
+@22
+top_wrapper.tb_instance.uut2.in[7:0]
+top_wrapper.tb_instance.uut2.out[7:0]
+@c00028
+top_wrapper.tb_instance.uut2.select[-1:0]
+@28
+(0)top_wrapper.tb_instance.uut2.select[-1:0]
+(1)top_wrapper.tb_instance.uut2.select[-1:0]
+@1401200
+-group_end
+@1000200
+-*** UUT2 ***
+[pattern_trace] 1
+[pattern_trace] 0
